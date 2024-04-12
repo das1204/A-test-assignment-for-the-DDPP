@@ -37,4 +37,9 @@
 <!--Логика работы-->
 ## Алгоритм 
 
-При запуске скрипта app.py автоматически открывается главная страница проекта
+При запуске скрипта ```app.py``` автоматически открывается главная страница проекта.
+P.S. Первый запуск при каждом новом открытии сайта занимает какое-то время, поскольку автоматически подгружаются данные ИПЦ с Росстата, а также [Ключевая ставка](https://cbr.ru/hd_base/KeyRate/?UniDbQuery.Posted=True) и [Курс Доллара США](https://cbr.ru/currency_base/dynamics/?UniDbQuery.Posted=True&UniDbQuery.so=0&UniDbQuery.mode=1&UniDbQuery.date_req1=&UniDbQuery.date_req2=&UniDbQuery.VAL_NM_RQ=R01235) с сайта Банка России.
+
+![main_web](./img/main_web.png)
+
+
