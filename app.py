@@ -116,13 +116,13 @@ def plot_forecast(model, X_val: np.ndarray, y_val: np.ndarray, type_CPI: str):
     fig.add_trace(go.Scatter(x=data['Дата'][-6:],
                              y=lower_bound,
                              fill=None, mode='lines',
-                             name='Верхний дов. интервал 95%',
+                             name='Нижний дов. интервал 95%',
                              marker=dict(color='#92d050')))
     fig.add_trace(go.Scatter(x=data['Дата'][-6:],
                              y=upper_bound,
                              fill='tonexty',
                              mode='lines',
-                             name='Нижний дов. интервал 95%',
+                             name='Верхний дов. интервал 95%',
                              marker=dict(color='#92d050'),
                              fillcolor='rgba(146, 208, 80, 0.2)'))
 
