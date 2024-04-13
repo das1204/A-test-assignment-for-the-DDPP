@@ -6,6 +6,8 @@ import functions as fn
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 import numpy as np
+import webbrowser
+from threading import Timer
 
 # Устанавливаем стандартную тему Plotly
 pio.templates.default = 'plotly'
@@ -183,5 +185,10 @@ def forecast() -> str:
     return render_template('forecast.html', path=request.path)
 
 
+def open_browser():
+    webbrowser.open_new("http://127.0.0.1:5000")
+
+
 if __name__ == '__main__':
+    Timer(1, open_browser).start()
     app.run(debug=False)
