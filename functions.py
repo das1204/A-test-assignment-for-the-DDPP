@@ -1,6 +1,5 @@
 # Импорт стандартных библиотек
 from datetime import date
-from io import BytesIO
 import pickle
 import warnings
 
@@ -53,8 +52,7 @@ def get_CPI_data_from_rosstat(type_CPI: str) -> pd.DataFrame:
     start_url = 'https://rosstat.gov.ru'
     try:
         # Отправляем GET-запрос к исходному URL
-        response = requests.get(url=f'{start_url}/statistics/price#',
-                                headers={'User-Agent': str(UserAgent().random).strip()})
+        response = requests.get(url=f'{start_url}/statistics/price#', headers={'User-Agent': str(UserAgent().random).strip()})
         # Использую str() и strip() т.к. встречаются UserAgent с начальными/конечными пробелами, ведущие к ошибке
 
         # Создаем объект BeautifulSoup для парсинга HTML-кода страницы
@@ -105,13 +103,7 @@ def get_CPI_data_from_rosstat(type_CPI: str) -> pd.DataFrame:
 
 
 def get_DollarER_data_from_cbr() -> pd.DataFrame:
-    response = requests.get(
-        f'https://cbr.ru/Queries/UniDbQuery/DownloadExcel/98956?Posted=True&so=1&mode=1&VAL_NM_RQ=R01235&From=01.07'
-        f'.1992&To={date.today().day}.{date.today().month}.{date.today().year}&FromDate=07%2F01%2F1992&ToDate='
-        f'{date.today().day}%2F{date.today().month}%2F{date.today().year}',
-        headers={'User-Agent': str(UserAgent().random).strip()})
-
-    df = pd.read_excel(BytesIO(response.content))
+    df = pd.read_excel(f'https://cbr.ru/Queries/UniDbQuery/DownloadExcel/98956?Posted=True&so=0&mode=1&VAL_NM_RQ=R01235&From=01.07.1992&FromDate=07%2F01%2F1992&ToDate={date.today().month}%2F{date.today().day}%2F{date.today().year}')
 
     df.drop(['nominal', 'cdx'], axis=1, inplace=True)
     df.columns = ['Дата', 'Курс Доллара']
