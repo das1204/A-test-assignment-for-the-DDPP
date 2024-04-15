@@ -17,15 +17,7 @@ warnings.filterwarnings('ignore')
 
 
 def load_model(type_CPI: str):
-    if type_CPI == '01':
-        file_path = './models/01.pkl'
-    elif type_CPI == '02':
-        file_path = './models/02.pkl'
-    elif type_CPI == '03':
-        file_path = './models/03.pkl'
-    elif type_CPI == '04':
-        file_path = './models/04.pkl'
-    with open(file_path, 'rb') as model_file:
+    with open(f'./models/{type_CPI}.pkl', 'rb') as model_file:
         return pickle.load(model_file)
 
 
