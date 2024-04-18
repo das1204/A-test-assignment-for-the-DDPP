@@ -17,7 +17,7 @@
 
 ```git clone https://github.com/das1204/A-test-assignment-for-the-DPPD.git```
 
-2. Переход в директорию Oxygen
+2. Переход в директорию A-test-assignment-for-the-DPPD
 
 ```cd A-test-assignment-for-the-DPPD```
 
