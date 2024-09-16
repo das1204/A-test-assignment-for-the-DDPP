@@ -11,15 +11,15 @@
 
 <!--Установка-->
 ## Установка
-У вас должны быть установлены [зависимости проекта](https://github.com/das1204/A-test-assignment-for-the-DPPD#зависимости)
+У вас должны быть установлены [зависимости проекта](https://github.com/das1204/A-test-assignment-for-the-DDPP#зависимости)
 
 1. Клонирование репозитория 
 
-```git clone https://github.com/das1204/A-test-assignment-for-the-DPPD.git```
+```git clone https://github.com/das1204/A-test-assignment-for-the-DDPP.git```
 
-2. Переход в директорию A-test-assignment-for-the-DPPD
+2. Переход в директорию A-test-assignment-for-the-DDPP
 
-```cd A-test-assignment-for-the-DPPD```
+```cd A-test-assignment-for-the-DDPP```
 
 3. Установка зависимостей
 
